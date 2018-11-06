@@ -163,31 +163,119 @@ data or lack of proof supporting the services billed.So,it is important to ensur
 claims submitted for payment are coded accurately.
 \section{Data Privacy and Security}
 Since patient doesn't has the full control over his data, third parties can easily misuse the data.There are currently no mechanism available to share data in a permissioned and time bound manner.Sensitive data in healthcare can include patient data like protected health information (PHI), stored data such as medical and payment records, medical devices data etc. which are ubiquitous in healthcare environments.But healthcare organizations are not always properly prepared for managing and protecting their big data. That’s because IT departments within healthcare organizations often lack the budget necessary to bolster big data security.Data breaches, like the one that exposed nearly 38 million Anthem Health Insurance patient records, are becoming increasingly common. The healthcare industry has the highest risk factor when it comes to experiencing a data breach. Statistics show 88\% of all ransomware attacks in 2017 targeted the healthcare industry.[https://www.zettaset.com/index.php/solutions/data-privacy-protection-healthcare/].Healthcare records are considered highly valuable to cyber-attackers. This is because of the richness of personal, medical, financial information contained within each EHR. Data thieves can easily resell this information on the dark web. With access to this information, identity theft, insurance fraud, and financial fraud is committed for financial gain by criminal elements.But data is at risk even if an organization does not suffer an outside attack. Information can be leaked internally when employees, contractors, and IT security personnel do not take the proper precautions to manage and protect their data.
+
+\section{Lack of Transparency}
+The entire system is not patient centric and patient doesn't have full control over his/her data.Since patient doesnt have control over their data, what happen with their data is hidden to the patient.
+
+
 \section{Data Reliability}
 Health data of patients should be instantly accessible when there is a need.Most of the service providers are storing health data locally in their database.This causes high potential for data reliability and data loss.If the system fails, entire patient health records gets destroyed.Cloud based duplication of data is necessary to reliably store data loss.
 
 
 \chapter{Blockchain Applications in Healthcare}
-\section{Personal Health Records}
-\subsection{Medrec}
-As the name indicates,the blockchain is made in a chain like fashion in wgich each record is linked with previous one.This property of blockchain can be used to links health records of patient and hospitals.PHRs enable patients to control how their health information is used and shared, verify
-the accuracy of their health records, and correct potential errors in the data.
+There are lots of areas within healthcare where blockchain can be applied.Blockchain can provide patient centric longitudianl health records,supply chain management,permissioned data sharing and a lot more.The following are the main use cases of blockchain in  healthcare.
 \begin{figure}[H]
 \centering
-\includegraphics[width=0.7\textwidth]{ppr.png}
+\includegraphics[width=0.9\textwidth]{apps.jpg}
 \caption{Personal Health Records}
 \label{ppr}
 \end{figure}
-\subsection{Deloitte}
-\section{Patient Controlled Data Sharing}
-Consortium blockchain can be used to set access control to patient data.The access to the data can be made time based so that access to the patient data can be revoked after need or when patient want to block access.
+\section{Personal Health Records}
+The architecture of blockchain is like a series of immutable records.This is highly helpful in implementic a patient centric chain of health records.The series of health records of patients can be linked on the basis of time as patient goes for different services at different providers.The following are the different concepts on how to implement this longitudinal list of records.
+\subsection{Medrec}
+In Medrec, the longitudinal ist of records are implemented using Summery Contracts(SC).This is a special kind of etherium contract which functions as a bread crumb trail for participants in the system to locate their medical record history.It holds a list of references to Patient Provider Relationship contracts (PPRs).A Patient Provider Contract is issued when a service provider like hospital adds health records for a patient.Thus SC represents all the patient's previous and current engagements with other service providers in the system. Providers can also have SC with references to patients for whom they have given services. SC can be used to provide backups, notifications,granting and revoking access permissions etc.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{ppr.png}
+\caption{Summery Contract and PPR}
+\label{ppr}
+\end{figure}
+\section{Health Information Exchange}
+Currently, the healthcare industry experiences major inefficiencies due to diverse and unconnected data. Effective care collaboration is vital to improve healthcare outcomes. With digitized health data, the exchange of healthcare information across healthcare organizations is required.Data sharing should be done only by considering privacy of patients.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{centric.png}
+\caption{lilang 2017}
+\label{ppr}
+\end{figure}
+\subsection{Medicalchain}
+Any interactions with health records are recorded as transactions on the network.
+Transactions are viewable only to the participants associated with the transaction.Medicalchain follows following procedures for information sharing.
+\begin{description}
+\item[$\bullet$] Patient A grants access to EHR to Practitioner A
+\item[$\bullet$] Practitioner A’s ID is added to Patient A’s authorised asset on the ledger
+\item[$\bullet$] Patient A’s ID is added to Practitioner A’s authorised asset on the ledger
+\item[$\bullet$] The Symmetric key for the EHR is decrypted with Patient A’s private key
+\item[$\bullet$] Symmetric key is then encrypted with Practitioner A’s public key
+\end{description}
+Similar kind of operations are done for revoking access.
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{sharing.png}
-\caption{Patient Controlled Data Sharing}
+\caption{Sharing of Health Records}
 \label{sharing}
 \end{figure}
-\section{Claim adjudication using smart contracts}
+
+\subsection{Deloitte}
+Deloitte uses patients private key to share their health data.Patients private key links their identity to blockchain data.Only oraganisations with this key can access the information and others can not.
+\begin{figure}[H]
+\centering
+\includegraphics[width=0.9\textwidth]{diloitte.png}
+\caption{Summery Contract and PPR}
+\label{ppr}
+\end{figure}
+
+\section{Verifying the Authenticity of Drugs}
+
+In the Pharma industry, drugs are frequently returned to the pharmaceutical manufacturers. For instance, wholesalers may have ordered excess inventory and accordingly may need to return unsold stock to the pharmaceutical manufactures.While the proportion of the returned drugs is small compared to the sales (about 2–3\% of sales), the per year volume is in the range of \$7- 10 billion.[https://hackernoon.com/top-5-use-cases-of-blockchain-in-pharma-and-healthcare-that-you-should-know-about-77ccdd76369b]
+Instead of destroying these perfectly good drug shipments, pharmaceutical companies instead opt to re-sell them. However before they can re-sell these returned drugs, the pharmaceutical companies have a legal obligation to verify the authenticity of the returned drugs(eg: Falsified Medicine Directive (FMD)).A far better and recommended approach is to have pharmaceutical manufacturers record the serial numbers of their packages on a blockchain, which serves as a decentralized and distributed ledger. Wholesalers and customers can then verify the authenticity of a drug package by connecting to the blockchain.
+
+\subsection{ATTP (Advanced Track and Trace for Pharmaceuticals) by SAP}
+Merck in partnership with SAP has developed the SAP Pharma Blockchain POC app. SAP launched this first Proof of Concept in Q3 2017, and an improved version in early 2018.
+\begin{description}
+\item[$\bullet$]SAP’s existing solution (unrelated to blockchain) generates unique identifiers for a drug package.
+\item[$\bullet$]When a manufacturer ships a package they register the item on the SAP Pharma POC blockchain, with the four pieces of information generated; the item number (based on GS1 standard), a serial number, a batch number, and an expiration date.
+\item[$\bullet$]The distributor can extract the four pieces information from the packaging’s barcode, using a simple scanner mobile app, allowing them to verify returns .
+\item[$\bullet$]Counterfeiter copies of barcodes can be avoided, since SAP has the added ability to track every time a package changes hands. A map view within the mobile app also helps ensure that the drugs are in the expected geographical region.
+\end{description}
+
+\subsection{Farmatrust}
+is developing a platform based on blockchain technology to improve drug supply chain integrity. It is mainly focused on eliminating of counterfeit drugs proliferation and increasing efficiency in the pharmaceutical industry. The platform offers possibility to track pharmaceuticals through a supply chain that links digital systems to pharmaceuticals moving in the physical world. With a unique ID combined to a digital supply chain the FarmaTrust solution based on blockchain aims to eliminate proliferation of counterfeit drugs.
+ 
+The platform will create a network of pharmaceutical brands, contract manufacturers and suppliers, logistics and shipping companies, wholesalers and distributors as well as pharmacies and hospitals. This network will then become a trusted system to ensure that medicines and related products are indeed the genuine product.
+\begin{figure}[H]
+\centering
+\includegraphics[width=1.1\textwidth]{farma.png}
+\caption{Farmatrust Working}
+\label{ppr}
+\end{figure}
+
+
+\section{Health Insurance Claim Adjudication}
+The insurer may decide to pay the claim in full, deny the claim, or reduce the amount
+paid to the provider. The decision to reduce a payment to the provider is typically made when
+the insurance company has determined that the billed service is inappropriate or medically
+unnecessary for the diagnosis or procedure codes. Therefore, “it is important to ensure that all
+claims submitted for payment are coded accurately. As soon as an insurance company re-
+ceives a medical claim, they begin a thorough review. Sometimes even small errors such as a
+misspelled patient name may cause a claim to be rejected” [57]. The majority of claims today
+are processed automatically without manual intervention, but as claims become more com-
+plex and are plagued by error and fraud [58], claim adjudication remains a challenging pro-
+cess.
+Currently, twenty-two percent of claims get rejected either because they are not re-
+ceived by the insurer or they contain defects, such as incomplete or incorrect demographic
+data or lack of proof supporting the services billed [59].Fortunately, smart contracts present
+an opportunity for automating the adjudication process further by distributing and thus mak-
+ing claims transparent to the provider and insurer, exposing potential errors and frauds that
+can be corrected or investigated in a much timelier manner. Another benefit of creating these
+pre-established agreements via smart contracts is to ensure involved participants are up-to-
+date and properly notified as policies or rules change.
+
+
+
+
+
+\section{Patient Digital Identity}
 Smart contracts present
 an opportunity for automating the adjudication process further by distributing and thus mak-
 ing claims transparent to the provider and insurer, exposing potential errors and frauds that
