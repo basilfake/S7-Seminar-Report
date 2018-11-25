@@ -1,16 +1,16 @@
 \documentclass[12pt]{report}
 \usepackage[english]{babel}
 \usepackage[utf8x]{inputenc}
+\usepackage{graphicx}
 \usepackage{amsmath}
-\usepackage{graphicx}
 \usepackage[colorinlistoftodos]{todonotes}
-\usepackage{graphicx}
 \usepackage{float}
+\usepackage[T1]{fontenc}
 \usepackage{subfigure}
 \usepackage{algorithmic}
 \usepackage{algorithm}
-\usepackage{pdfpages}
 \usepackage{color}
+\usepackage{pdfpages}
 \usepackage[toc,page]{appendix}
 
 % % % % % % % % % % % % % % % % % % % % % %
@@ -35,7 +35,7 @@
 \begin{flushleft} \large
 \emph{Submitted By:}\\
 \hspace{0.3cm}Basil K Y\\
-\hspace{0.3cm}Reg No. 15CS087\\
+\hspace{0.3cm}Reg No. MUT15CS019\\
 \end{flushleft}
 \end{minipage}
 ~~~~~~~~~~~~~~~~~~~~
@@ -68,7 +68,7 @@ Varikoli P.O, Puthencruz-682308
 \section*{\centering CERTIFICATE}
 %\thispagestyle{empty}
 \begin{center}
- This is to certify that the seminar report entitled "AYUSH : BLOCKCHAIN BASED HEALTH RECORD MANAGEMENT SYSTEM" submitted by \textbf{Basil K Y(15CS087)} of Semester VII is  a bonafide account of the work done by him/her under our supervision\\
+ This is to certify that the seminar report entitled "AYUSH : BLOCKCHAIN BASED HEALTH RECORD MANAGEMENT SYSTEM" submitted by \textbf{Basil K Y(MUT15CS019)} of Semester VII is  a bonafide account of the work done by him/her under our supervision\\
 \end{center}
 \vspace{1.6cm}
 
@@ -117,10 +117,12 @@ Blockchain is an emerging technology with tremendous applications in various sec
 % % % % % % % %% % % % % % % % % % % % % % % % % %
 
 \chapter{Introduction}
-
-Blockchain is a distributed and decentralized chain of records or ledgers.The immutability of blockchain records ensures trust between participating entities.At its core, blockchain is a distributed
-system for recording and storing transaction
-records. More specifically, blockchain is a
+\paragraph{
+Blockchain is a distributed and decentralized chain of records or ledgers.
+The immutability of blockchain records ensures trust between participating entities.
+At its core, blockchain is a distributed system for recording and storing transaction
+records.
+More specifically, blockchain is a
 shared, immutable record of peer to peer
 transactions built from linked transaction
 blocks and stored in a digital ledger.
@@ -138,8 +140,7 @@ and require verification by the network
 before information is added, enabling
 trustless collaboration between network
 participants while recording an immutable
-audit trail of all interactions.This has lead to a wide range of applications for blockchain on different domains like banking,financial transactions,social media platforms,crypto currencies etc.
-\newline
+audit trail of all interactions.This has lead to a wide range of applications for blockchain on different domains like banking,financial transactions,social media platforms,crypto currencies etc.}
 \par The impact of blockchain technology can also be seen in the healthcare industry also. Technologists and healthcare providers and professionals across the globe view blockchain technology as a crucial way to implement the sharing of medical records in a secure way to protect patient's personal data from outsiders, and give patients more control over their information.Various blockchain based solutions have been emerged to enhance current situation of healthcare.
 \pagenumbering{arabic}
 
@@ -148,31 +149,48 @@ audit trail of all interactions.This has lead to a wide range of applications fo
 The current healthcare infrastructure has often been called inadequate to handle information exchange and requires certain tweaks.Health record sharing in current scenario doesn't take care about the privacy of patients and patients have less control over their own data.The following is a list of main problems healthcare industry and the patients faces today.
 \section{Interoperability of healthcare data}
 Currently, there is no accepted standard for the sharing of health data from one hospital to another.Most of the cases, patient has to carry all of his past medical records to the new hospital or have to do the previous medical tests again.It’s difficult to simply copy information from one piece of EHR software to another. Mismatched types, strange data fields, and proprietary formats mean that data has to be manipulated and sanitized before it can be imported into another system. This lack of a common standard for capturing, transmitting, receiving, storing, and managing patient data causes delays and inaccuracies.Some EHR and healthcare system vendors are holding patient data for ransom. They charge fees for transmitting data outside the system, increasing operational costs and making providers less likely to send data to others in the healthcare supply chain. The government is acting to encourage interoperability, but not all vendors have taken this on board.There is no way to consistently identify a patient across multiple systems or providers. Patients can give their name, date of birth, and other identifying data, but because different systems store this information in different ways, errors are possible. There is a push towards a unique patient identifier, a code that could be used to categorically identify the same individual no matter what system or provider they used. Unfortunately, we are still far from getting this most basic of functionalities in place.There is also a lack of standards for sending, receiving, and managing information between EHR systems.
-%1. What have you learned from the existing solutions\\
-%2. What were the key points in selecting your work\\
-%3. What were the drawbacks you spotted in the existing literature\\
+
 \section{Fragmented Patient Records}
-Patient data is scattered across many hospitals and healthcare service  providers. Patient doesn't have a longitudinal list of their past health records.Duplication of health records can occur within hospitals also.Different records may be generated for same patient if he forgets his unique IDs.Many hospitals in rural areas are still following physical records which makes the record handling even complex.The records are more prone to tampering and loss.
-Patients regularly encounter fragmented systems of care and the results often lead to unmet social needs, conflicting medications, incorrect dosages etc. Many of patients that are the most affected by fragmented care coordination are populations that are already at risk for chronic illnesses and have an array of unmet social needs. 
+\paragraph{Patient data is scattered across many hospitals and healthcare service  providers. Patient doesn't have a longitudinal list of their past health records.Duplication of health records can occur within hospitals also.Different records may be generated for same patient if he forgets his unique IDs.Many hospitals in rural areas are still following physical records which makes the record handling even complex.The records are more prone to tampering and loss.
+Patients regularly encounter fragmented systems of care and the results often lead to unmet social needs, conflicting medications, incorrect dosages etc. Many of patients that are the most affected by fragmented care coordination are populations that are already at risk for chronic illnesses and have an array of unmet social needs. }
 \section{Claim Adjudication}
 Current existing patient billing management systems are at best complex and prone to manipulation by the service providers.Today, an estimated 50\% of healthcare costs are fraudulent, resulting from excessive
-billing or billing for non performed services.Also Currently, 20\% of claims get rejected either because they are not received by the insurer or they contain defects, such as incomplete or incorrect demographic
-data or lack of proof supporting the services billed\cite{7}.There is a lack of trust between participants in the healthcare industry as medical records are easily changed by hospitals or patients for getting health insurances.It is easy to tamper the data if it is stored centrally at a place.Currently, 22 \% of claims get rejected either because they are not received by the insurer or they contain defects, such as incomplete or incorrect demographic
-data or lack of proof supporting the services billed.So,it is important to ensure that all
+billing or billing for non performed services.Also Currently, 22\% of claims get rejected either because they are not received by the insurer or they contain defects, such as incomplete or incorrect demographic
+data or lack of proof supporting the services billed\cite{7}.There is a lack of trust between participants in the healthcare industry as medical records are easily changed by hospitals or patients for getting health insurances.It is easy to tamper the data if it is stored centrally at a place.So,it is important to ensure that all
 claims submitted for payment are coded accurately.
 \section{Data Privacy and Security}
 Since patient doesn't has the full control over his data, third parties can easily misuse the data.There are currently no mechanism available to share data in a permissioned and time bound manner.Sensitive data in healthcare can include patient data like protected health information, stored data such as medical and payment records, medical devices data etc. which are ubiquitous in healthcare environments.But healthcare organizations are not always properly prepared for managing and protecting their big data. That’s because IT departments within healthcare organizations often lack the budget necessary to bolster big data security.Data breaches, like the one that exposed nearly 38 million Anthem Health Insurance patient records, are becoming increasingly common. The healthcare industry has the highest risk factor when it comes to experiencing a data breach. Statistics show 88\% of all ransomware attacks in 2017 targeted the healthcare industry.\cite{12}.Healthcare records are considered highly valuable to cyber attackers. This is because of the richness of personal, medical, financial information contained within each EHR. Data thieves can easily resell this information on the dark web. With access to this information, identity theft, insurance fraud, and financial fraud is committed for financial gain by criminal elements.But data is at risk even if an organization does not suffer an outside attack. Information can be leaked internally when employees, contractors, and IT security personnel do not take the proper precautions to manage and protect their data.
 
-
+\section{Ill-informed Clinical Decision
+Making\cite{3}}Traditionally, an investigation or test should only be requested and arranged if this is going
+to lead to a different possible
+diagnosis or alternative treatment Unfortunately, even when
+test have returned, these are
+rarely shared widely with all of
+the health professionals involved
+in the patient’s care and are
+normally isolated, at the
+institution which requested them
+originally.
+The patient’s quality of care
+suffers as a result of this. Other
+institutions are not aware of a
+patient’s complete history and in
+turn, this could lead to incorrect
+decision making, delays, and
+unnecessary costs for the patient
+or health institution. In the worst
+case, these medical errors can be
+fatal.
 
 \section{Data Reliability}
-Health data of patients should be instantly accessible when there is a need.Most of the service providers are storing health data locally in their database.This causes high potential for data reliability and data loss.If the system fails, entire patient health records gets destroyed.Cloud based duplication of data is necessary to reliably store data loss.
+Health data of patients should be instantly accessible when there is a need, to provide proper treatment on time.Most of the service providers are storing health data locally in their database.This causes high potential for data reliability and data loss.If the system fails, entire patient health records gets destroyed.Cloud based duplication of data is necessary to reliably store data loss.
 
 \section{Lack of Transparency}
 The entire system is not patient centric and patient doesn't have full control over his/her data.Since patient doesn't have control over their data, what happen with their data is hidden to the patient.Hospitals or service providers may sell patient's data to third parties without their permission.
 
 \chapter{Blockchain Applications in Healthcare}
-There are lots of areas within healthcare where blockchain can be applied.Blockchain can provide patient centric longitudinal health records,supply chain management,claim adjudication,drug verification,permissioned data sharing and a lot more.There are existing solutions and concepts available.The following are the main use cases of blockchain in  healthcare.
+\paragraph{There are lots of areas within healthcare where blockchain can be applied.Blockchain can provide patient centric longitudinal health records,supply chain management,claim adjudication,drug verification,permissioned data sharing and a lot more.There are existing solutions and concepts available.The following are the main use cases of blockchain in  healthcare.}
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{apps.jpg}
@@ -180,7 +198,7 @@ There are lots of areas within healthcare where blockchain can be applied.Blockc
 \label{usecase}
 \end{figure}
 \section{Personal Health Records}
-The architecture of blockchain is like a series of immutable records.This is highly helpful in implementic a patient centric chain of health records.The series of health records of patients can be linked on the basis of time as patient goes for different services at different providers.The following are the different concepts on how to implement this longitudinal list of records.
+The architecture of blockchain is like a series of immutable records.This is highly helpful in implementing a patient centric chain of health records.The series of health records of patients can be linked on the basis of time as patient goes for different services at different providers.The following are the different concepts on how to implement this longitudinal list of records.
 \subsection{Medrec\cite{2}}
 In Medrec, the longitudinal ist of records are implemented using Summery Contracts(SC).This is a special kind of etherium contract which functions as a bread crumb trail for participants in the system to locate their medical record history.It holds a list of references to Patient Provider Relationship contracts (PPRs).A Patient Provider Contract is issued when a service provider like hospital adds health records for a patient.Thus SC represents all the patient's previous and current engagements with other service providers in the system. Providers can also have SC with references to patients for whom they have given services. SC can be used to provide backups, notifications,granting and revoking access permissions etc.
 \begin{figure}[H]
@@ -197,6 +215,18 @@ Currently, the healthcare industry experiences major inefficiencies due to diver
 \caption{Person centric data sharing\cite{13}}
 \label{centric}
 \end{figure}
+\subsection{Medrec}
+\paragraph{A Patient-Provider Relationship Contract is issued between two nodes in the system when one node stores and manages medical records for the other(eg:hospital and a patient). The PPR defines an assortment of data
+pointers and associated access permissions that identify the records held by the care provider. Each pointer
+consists of a query string that, when executed on the provider's database, returns a subset of patient data.
+The query string is affixed with the hash of this data subset, to guarantee that data have not been altered
+at the source. Additional information indicates where the provider's database can be accessed in the
+network, i.e. hostname and port in a standard network topology. The data queries and their associated
+information are crafted by the care provider and modified when new records are added. To enable patients
+to share records with others, a dictionary implementation (hash table) maps viewers’ addresses to a list of
+additional query strings. Each string can specify a portion of the patient's data to which the third party
+viewer is allowed access.}
+\par This can make things complex as an intermediate mechanism is needed to convert the queries to compatible types in the internal implementation at each hospitals.
 \subsection{Medicalchain\cite{11}}
 Any interactions with health records are recorded as transactions on the network.
 Transactions are viewable only to the participants associated with the transaction.Medicalchain follows following procedures for information sharing.
@@ -216,7 +246,7 @@ Similar kind of operations are done for revoking access.
 \end{figure}
 
 \subsection{Deloitte\cite{1}}
-Deloitte uses patients private key to share their health data.Patients private key links their identity to blockchain data.Only oraganisations with this key can access the information and others can not.
+Deloitte uses patients private key to share their health data.Patients private key links their identity to blockchain data.Only organizations with this key can access the information and others can not.This have a potential risk as since private key is getting shared, the organizations can access the data for any period of time.Also, patient cannot selectively share data.
 \begin{figure}[H]
 \centering
 \includegraphics[width=0.9\textwidth]{diloitte.png}
@@ -252,20 +282,20 @@ is developing a platform based on blockchain technology to improve drug supply c
 The platform will create a network of pharmaceutical brands, contract manufacturers and suppliers, logistics and shipping companies, wholesalers and distributors as well as pharmacies and hospitals. This network will then become a trusted system to ensure that medicines and related products are indeed the genuine product.
 \begin{figure}[H]
 \centering
-\includegraphics[width=1.1\textwidth]{farma.png}
+\includegraphics[width=1.0\textwidth]{farma.png}
 \caption{Farmatrust Working}
 \label{farmatrust}
 \end{figure}
 
 
 \section{Health Insurance Claim Adjudication}
-The insurer may decide to pay the claim in full, deny the claim, or reduce the amount
+\paragraph{The insurer may decide to pay the claim in full, deny the claim, or reduce the amount
 paid to the provider. The decision to reduce a payment to the provider is typically made when
 the insurance company has determined that the billed service is inappropriate or medically
 unnecessary for the diagnosis or procedure codes. Therefore, it is important to ensure that all
 claims submitted for payment are coded accurately. As soon as an insurance company receives a medical claim, they begin a thorough review. Sometimes even small errors such as a misspelled patient name may cause a claim to be rejected. The majority of claims today
-are processed automatically without manual intervention, but as claims become more complex and are plagued by error and fraud, claim adjudication remains a challenging process.
-\newline
+are processed automatically without manual intervention, but as claims become more complex and are plagued by error and fraud, claim adjudication remains a challenging process.}
+
 \par Fortunately, smart contracts present
 an opportunity for automating the adjudication process further by distributing and thus making claims transparent to the provider and insurer, exposing potential errors and frauds that
 can be corrected or investigated in a much timelier manner. Another benefit of creating these
@@ -275,14 +305,13 @@ an opportunity for automating the adjudication process further by distributing a
 can be corrected or investigated in a much timelier manner.
 
 \section{Patient Digital Identity}
-Without common standards for collecting patient identifying information, even the
+\paragraph{Without common standards for collecting patient identifying information, even the
 same patient’s identity can vary from one care facility to another.  Furthermore, patient information manually
 entered into the system may contain typos or errors, and the more data collected, the more
 opportunities for mistakes. Although within each organization patient demographics data
 may be collapsed into a single unique ID, the ID generally does not translate across organizations.
 Without a functional, unified identity management system, patient identification
-schemes employed at various care sites may continuously experience incompatibility and patient matching problems, unless a patient exclusively receives care within one organization.
-\newline
+schemes employed at various care sites may continuously experience incompatibility and patient matching problems, unless a patient exclusively receives care within one organization.}
 \par
 The very nature of Blockchain incorporates such a decentralized, unified identity system. Many existing Blockchains use cryptographically secured addresses to represent identities. Each address is mathematically linked with a unique key that is used to easily verify theownership of an address or an identity yet does not reveal any personal information relating
 to the individual. The decentralized and auditable characteristics of Blockchain can help enforce standardized verifiable identities for patients via a universal patient index registry sharable across all healthcare facilitates within a nation and beyond. In case of lost or stolen keys, new addresses are also trivial to generate and reassign to patients.
@@ -292,7 +321,7 @@ In the pharmaceutical industry, clinical trials are designed to test the toleran
 \par Fraud usually includes modifying or hiding data that could compromise the advance of the clinical trial and damage the image of an organization among regulatory agencies or patients. Different types of data can me modified or manipulated.The public key proves that a certain document was registered on the blockchain at a certain time. If during the trial, someone has doubts about the authenticity of data they encounter, they can verify that information they have is similar to the original information stored on the blockchain.
 
 \section{Provider Directory}
-Healthcare organizations, including payers, must maintain directories of healthcare providers, or doctors. Today this is done redundantly across multiple organizations. Further, if these directories get out of sync, it can lead to issues such as claims bouncing. Through blockchains, provider directories can be maintained by various healthcare organizations in a shared, decentralized ledger. This reduces redundancies and inconsistencies, and thereby improves operational efficiencies (including around claims adjudication).
+\paragraph{Healthcare organizations, including payers, must maintain directories of healthcare providers, or doctors. Today this is done redundantly across multiple organizations. Further, if these directories get out of sync, it can lead to issues such as claims bouncing. Through blockchains, provider directories can be maintained by various healthcare organizations in a shared, decentralized ledger. This reduces redundancies and inconsistencies, and thereby improves operational efficiencies (including around claims adjudication).}
 
 
 
@@ -316,8 +345,8 @@ Even though there are good reasons behind applying blockchain on healthcare sect
 \subsection{Uncertainty}
 The Blockchain concept is not widespread yet and there are only a few successful initiatives based on this modern technology at this time. That is a major hurdle because we don’t have many successful blockchain models to follow which creates an uncertain situation.
 \subsection{Storage Capability}
-Blockchain within the healthcare industry will be comprised of medical records, images, documents and lab reports which require a significant amount of storage space.Not only is it costly to store these data,but data access operations may also fail when the cost exceeds Blockchain network defined
-data size limit.
+\paragraph{Blockchain within the healthcare industry will be comprised of medical records, images, documents and lab reports which require a significant amount of storage space.Not only is it costly to store these data,but data access operations may also fail when the cost exceeds Blockchain network defined
+data size limit.}
 \subsection{Scalability Challenge}
 Providers, hospitals, insurance companies, and even departments within the same health organizations experience disconnectedness
 caused by delays or the lack of information flow. Patients are commonly cared for at various
@@ -330,6 +359,12 @@ Standardization of technical procedures on blockchain platforms in healthcare is
 The cost of establishing and maintaining a healthcare blockchain is unknown yet and no one can seriously consider this technology without knowing about its expenses ahead of time.
 \subsection{Rules and Regulations}
 There are no rules available to address the use of blockchain in the healthcare industry. It is also uncertain as to how new policies regarding healthcare blockchain will conform to current privacy regulations like the HIPAA act.[18]
+
+\subsection{Limited Performance\cite{3}}
+Blockchain is not well suited for high performance (millisecond) transactions . It is not useful as a transaction-processing
+replacement and is unsuitable for  high-volume transactions.As blockchain technologies develop, many of the initial disadvantages are being eliminated, with further
+refinements in the blockchain ecosystem.As blockchain technologies develop, many of the initial disadvantages are being eliminated, with further
+refinements in the blockchain ecosystem.
 \subsection{Unwillingness to share data}
 Insurance payers and hospitals actively try to not share data. It is a competitive advantage for hospitals to keep cost data to themselves. If they are forced to share with insurance companies, they might get different rates for different patients. It is difficult to share data in an environment in which these entities are for profit.
 
@@ -378,14 +413,14 @@ Varian Medical Systems, Palo Alto, CA} 2017.
 \textit{Available:https://medicalchain.com/Medicalchain-Whitepaper-EN.pdf}
 
 \bibitem{12} \textquotedblleft Zettaset\textquotedblright[Online]\\ 
-\textit{Available:https://www.zettaset.com/index.php/solutions/data-privacy-protection-healthcare/}
+\textit{Available:https://www.zettaset.com/index.php/solutions/\\data-privacy-protection-healthcare/}
 
 \bibitem{13} \textquotedblleft Medium\textquotedblright[Online]\\ 
-\textit{Available:https://medium.com/@Cryptostory/blockchain-in-healthcare-use-cases-dd683df5065b}
+\textit{Available:https://medium.com/@Cryptostory/\\blockchain-in-healthcare-use-cases-dd683df5065b}
 
 
 \bibitem{14} \textquotedblleft Hackernoon\textquotedblright[Online]\\ 
-\textit{Available:https://hackernoon.com/top-5-use-cases-of-blockchain-in-pharma-and-healthcare-that-you-should-know-about-77ccdd76369b}
+\textit{Available:https://hackernoon.com/\\top-5-use-cases-of-blockchain-in-pharma-and-healthcare}
 
 \bibitem{15} \textquotedblleft SAP\textquotedblright[Online]\\ 
 \textit{Available:https://www.sap.com/india/index.html}
@@ -394,10 +429,10 @@ Varian Medical Systems, Palo Alto, CA} 2017.
 \textit{Available:https://www.farmatrust.com/}
 
 \bibitem{17} \textquotedblleft Intelligenthq\textquotedblright[Online]\\ 
-\textit{Available:https://www.intelligenthq.com/innovation-management/blockchain-use-cases-in-healthcare/}
+\textit{Available:https://www.intelligenthq.com/innovation-management/\\blockchain-use-cases-in-healthcare/}
 
 \bibitem{18} \textquotedblleft Wikipedia\textquotedblright[Online]\\ 
-\textit{Available:https://en.wikipedia.org/wiki/Health_Insurance_Portability_and_Accountability_Act/}
+\textit{Available:https://en.wikipedia.org/wiki/\\Health\_Insurance\_Portability\_and\_Accountability\_Act/}
 
 
 \vspace{2cm}
@@ -410,15 +445,15 @@ Varian Medical Systems, Palo Alto, CA} 2017.
 \textbf{It should contain all your presentation slide. Maximum 6 slides per page}
 \chapter*{Viva }
 \chapter*{References}
-\textbf{First page of your reference papers}
 \includepdf[pages=1,offset=0 -0]{10.pdf}
 \includepdf[pages=1,offset=0 -0]{8.pdf}
-\includepdf[pages=1,offset=0 -0]{3.pdf}
-\includepdf[pages=1,offset=0 -0]{5.pdf}
-\includepdf[pages=1,offset=0 -0]{6.pdf}
-\includepdf[pages=1,offset=0 -0]{9.pdf}
 \includepdf[pages=1,offset=0 -0]{4.pdf}
 \includepdf[pages=1,offset=0 -0]{12.pdf}
+\includepdf[pages=1,offset=0 -0]{7.pdf}
+\includepdf[pages=1,offset=0 -0]{9.pdf}
+\includepdf[pages=1,offset=0 -0]{11.pdf}
+\includepdf[pages=1,offset=0 -0]{6.pdf}
+\textbf{First page of your reference papers}
 
 \end{appendices}
 \end{document}
